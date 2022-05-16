@@ -1,7 +1,7 @@
 *** Settings ***
 Library             OperatingSystem
 #Library             lib/LoginLibrary_copy.py
-Library             C:\Users\ett19798\.jenkins\workspace\RobotAutomation\lib\LoginLibrary_copy.py
+Library             C:/Users/ett19798/.jenkins/workspace/RobotAutomation/lib/LoginLibrary_copy.py
 Library             DebugLibrary
 Library             String
 #Library             commands-Copy
