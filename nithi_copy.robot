@@ -1,6 +1,6 @@
 *** Settings ***
 Library             OperatingSystem
-Library             LoginLibrary_copy.py
+Library             lib/LoginLibrary_copy.py
 Library             DebugLibrary
 Library             String
 #Library             commands-Copy
