@@ -8,24 +8,24 @@ trigger:
 
 jobs:
 
--job: 'Test'
-pool:
-  vmImage: 'vs2017-win2016'
-strategy:
-  matrix:
-    Python37:
-      python.version: '3.7'
-  maxParallel: 1
+- job: 'Test'
+  pool:
+    vmImage: 'vs2017-win2016'
+  strategy:
+    matrix:
+      Python37:
+        python.version: '3.7'
+    maxParallel: 1
 
-steps:
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '$(python.version)'
-    architecture: 'x64'
+  steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '$(python.version)'
+      architecture: 'x64'
   
 
-- script: pip install robotframework-seleniumlibrary && npm install chromedriver
-  displayName: 'Install dependencies'
+  - script: pip install robotframework-seleniumlibrary && npm install chromedriver
+    displayName: 'Install dependencies'
 
-- powershell: robot --pythonpath - web.robot
-  displayName: 'Run Robot Scripts'
+  - powershell: robot --pythonpath - web.robot
+    displayName: 'Run Robot Scripts'
