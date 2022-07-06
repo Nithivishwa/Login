@@ -31,8 +31,9 @@ jobs:
     displayName: 'Run Robot Scripts'
 
   - task: PublishTestResults@2
+    displayName:  'Publish Test Results output.xml'
+    condition:  succeededOrFailed()
     inputs:
       testResultsFiles: outputxunit.xml
-      searchFolder: 'D:\a\1\s\'
-      condition: succeededOrFailed()
-      displayName: 'Publish Test Results outputxunit.xml'
+      searchFolder: 'D:\a\1\s\Results\'
+      
